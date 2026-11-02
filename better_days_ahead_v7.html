@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7253d6"><meta name="description" content="A colorful, privacy-first space for teens to explore activities, encouragement, and ways to find support."><title>Better Days Ahead</title>
+<style>
+:root{--ink:#282344;--muted:#665f7d;--purple:#7253d6;--pink:#ff78a8;--yellow:#ffd66b;--blue:#83d8f4;--green:#8de0b0;--paper:#fffdfb;--line:#eee8fa}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff4f7,#f2f0ff 48%,#effcff);min-height:100vh}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #29205b;outline-offset:3px}.wrap{max-width:1080px;margin:auto;padding:20px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 20px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:1.15rem}.sun{width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,var(--yellow),var(--pink));display:grid;place-items:center;font-size:23px}.tag{background:#e6ddff;color:#5739b5;padding:7px 12px;border-radius:999px;font-size:.78rem;font-weight:750}.hero{background:linear-gradient(120deg,#7050d4,#9a70e8 58%,#ef86b5);color:white;border-radius:28px;padding:clamp(24px,5vw,52px);position:relative;overflow:hidden;box-shadow:0 15px 40px #8063c52b}.hero:after{content:'☀';position:absolute;font-size:190px;right:5%;top:-45px;opacity:.15}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;max-width:650px;margin:10px 0}.hero p{max-width:570px;color:#f6efff;font-size:1.05rem;line-height:1.6}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:800;color:#fff0b8}.btn{border:0;border-radius:14px;padding:12px 17px;font-weight:800;background:var(--purple);color:white;box-shadow:0 5px 12px #5138a52b}.btn.light{background:white;color:#5b40b4}.btn.soft{background:#eee8ff;color:#583bb0;box-shadow:none}.btn:active{transform:translateY(1px)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:32px 2px 14px}.section-head h2{margin:0;font-size:1.45rem}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.tile,.panel{background:#ffffffd9;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 7px 22px #49318a0a}.tile{display:flex;gap:14px;align-items:flex-start;text-align:left;color:var(--ink);transition:.15s}.tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px #49318a14}.emoji{width:48px;height:48px;flex:0 0 48px;border-radius:16px;display:grid;place-items:center;font-size:25px}.tile h3{margin:1px 0 5px;font-size:1.05rem}.tile p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}.pink{background:#ffe0ec}.blue{background:#dcf5ff}.yellow{background:#fff0c6}.green{background:#dcf8e7}.lav{background:#eee5ff}.coral{background:#ffe4d8}.panel{margin-top:14px}.panel h3{margin:0 0 8px}.panel p{color:var(--muted);line-height:1.55}.hidden{display:none!important}.choice-row{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.pill{border:1px solid #ded5f2;background:white;border-radius:999px;padding:9px 13px;color:var(--ink)}.pill[aria-pressed=true]{background:#e9e1ff;border-color:var(--purple);color:#5134a9;font-weight:800}.result{background:#f1ecff;border-radius:16px;padding:16px;margin-top:14px;line-height:1.55}.small{font-size:.83rem;color:var(--muted)}.notice{background:#fff6d9;border:1px solid #f5df9d;border-radius:18px;padding:16px;margin-top:16px}.notice strong{display:block;margin-bottom:5px}.crisis{background:#fff0f1;border:1px solid #ffd0d6;border-radius:18px;padding:18px;margin-top:14px}.crisis a{color:#a12848;font-weight:800}.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:30px 10px 18px}.footer a{color:#5e43b7}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{color:#5e43b7;text-decoration:none;font-weight:750;font-size:.88rem;padding:8px 10px;border-radius:10px}.nav a:hover{background:#eee8ff}label{font-weight:700}select{padding:10px;border:1px solid #ded5f2;border-radius:12px;background:white;color:var(--ink);max-width:100%}
+.memory-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:12px 0}.memory-card{min-height:52px;border:1px solid #ded5f2;border-radius:12px;background:#eee8ff;color:#5134a9;font-size:1.35rem;font-weight:800}.memory-card:disabled{opacity:1;background:#fff0c6;border-color:#f5df9d;color:var(--ink)}.memory-card:focus-visible{outline:3px solid #29205b;outline-offset:2px}#scrambleGuess{font:inherit;color:var(--ink)}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.tile{min-height:130px}}@media(max-width:560px){.wrap{padding:14px}.top{align-items:flex-start}.tag{font-size:.7rem}.grid{grid-template-columns:1fr}.hero{border-radius:22px}.hero:after{right:-35px;top:5px;font-size:130px}.section-head{margin-top:25px}}
+
+.home-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.home-nav a{font-size:.84rem;font-weight:750;color:#5e43b7;text-decoration:none;padding:8px 11px;border-radius:999px}
+.home-nav a:hover{background:#eee8ff}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(190px,.7fr);align-items:center;gap:24px}
+.hero-art{position:relative;z-index:1;min-height:205px;display:grid;place-items:center}
+.hero-orbit{width:190px;height:190px;border-radius:50%;background:linear-gradient(145deg,#ffe28a,#ffc4dd);display:grid;place-items:center;box-shadow:0 14px 35px #3d20652b;transform:rotate(-7deg)}
+.hero-orbit span{font-size:92px;transform:rotate(7deg)}
+.float-note{position:absolute;background:#fff;color:#5b40b4;padding:10px 14px;border-radius:15px;font-size:.82rem;font-weight:800;box-shadow:0 8px 20px #3d20651c}
+.float-note.one{top:8px;right:0}.float-note.two{bottom:8px;left:0}
+.welcome-strip{display:flex;gap:12px;align-items:center;background:#ffffffc9;border:1px solid var(--line);border-radius:18px;padding:13px 16px;margin-top:16px;color:var(--muted);font-size:.9rem}
+.welcome-strip strong{color:var(--ink)}
+.tile{min-height:118px}
+.tile:focus-visible{outline:3px solid #29205b;outline-offset:3px}
+.footer{line-height:1.8}
+@media(max-width:650px){.hero{grid-template-columns:1fr}.hero-art{min-height:145px;grid-row:1}.hero-orbit{width:135px;height:135px}.hero-orbit span{font-size:66px}.float-note.one{right:8%}.float-note.two{left:8%}.home-nav{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Welcome screen and app-like polish */
+.welcome-screen{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:22px;background:linear-gradient(145deg,#7050d4 0%,#a879e8 52%,#f28db8 100%);color:#fff;overflow:auto}
+.welcome-screen[hidden]{display:none}
+.welcome-card{width:min(100%,520px);text-align:center;padding:clamp(26px,6vw,48px);border:1px solid #ffffff70;border-radius:30px;background:#ffffff20;backdrop-filter:blur(10px);box-shadow:0 22px 70px #32165c38;animation:welcome-pop .65s cubic-bezier(.2,.8,.2,1) both}
+.welcome-mark{width:104px;height:104px;margin:0 auto 20px;border-radius:32px;display:grid;place-items:center;background:linear-gradient(145deg,#ffe38b,#ffc3df);font-size:56px;box-shadow:0 12px 30px #3b1a5a38;animation:welcome-float 3s ease-in-out infinite}
+.welcome-card h1{font-size:clamp(2rem,7vw,3rem);line-height:1.05;margin:0 0 12px;letter-spacing:-.04em}
+.welcome-card p{max-width:390px;margin:0 auto 24px;line-height:1.6;color:#fff8ff}
+.welcome-kicker{font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;font-weight:850;color:#fff0b8;margin-bottom:12px}
+.welcome-start{background:#fff;color:#5b40b4;border:0;border-radius:15px;padding:13px 22px;font-weight:850;box-shadow:0 7px 20px #3b1a5a30}
+.welcome-start:hover{transform:translateY(-2px)}
+.welcome-note{font-size:.78rem!important;margin-top:17px!important;margin-bottom:0!important;color:#f6eefe!important}
+@keyframes welcome-pop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes welcome-float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-8px) rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){.welcome-card,.welcome-mark{animation:none!important}.welcome-start{transition:none!important}}
+
+
+/* Personal display preferences: session-only, no profile or tracking */
+body[data-theme="ocean"]{background:linear-gradient(135deg,#eafaff,#edf4ff 48%,#edfff8);--purple:#2879a8;--line:#d9edf5}
+body[data-theme="sunset"]{background:linear-gradient(135deg,#fff2e8,#fff0f5 48%,#fff9df);--purple:#b85b78;--line:#f3dce2}
+body[data-theme="forest"]{background:linear-gradient(135deg,#eff9ed,#f4f8ed 48%,#eaf8f2);--purple:#397a5b;--line:#dcebdd}
+body[data-theme="lavender"]{background:linear-gradient(135deg,#fff4f7,#f2f0ff 48%,#effcff)}
+body[data-text-size="large"]{font-size:18px}
+body[data-text-size="larger"]{font-size:20px}
+body[data-text-size="large"] .tile p,body[data-text-size="larger"] .tile p,
+body[data-text-size="large"] .panel p,body[data-text-size="larger"] .panel p{font-size:1em}
+body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.preference-group{margin:18px 0}
+.preference-group h3{margin:0 0 9px}
+.preference-choice{display:flex;flex-wrap:wrap;gap:9px}
+.preference-choice button{border:1px solid #ded5f2;background:#fff;border-radius:14px;padding:10px 13px;color:var(--ink)}
+.preference-choice button[aria-pressed="true"]{border:2px solid var(--purple);background:#eee8ff;font-weight:850}
+.preference-note{font-size:.83rem;color:var(--muted)}
+
+</style></head>
+<body>
+<section class="welcome-screen" id="welcomeScreen" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDescription">
+  <div class="welcome-card">
+    <div class="welcome-mark" aria-hidden="true">🌈</div>
+    <div class="welcome-kicker">A little space just for you</div>
+    <h1 id="welcomeTitle">Better Days Ahead</h1>
+    <p id="welcomeDescription">Explore something fun, find a little encouragement, or discover ways to connect with someone who can support you.</p>
+    <button class="welcome-start" id="welcomeStart" type="button">Let's explore ✨</button>
+    <p class="welcome-note">No pressure. Take what helps and leave the rest.</p>
+  </div>
+</section>
+<main class="wrap">
+<header class="top">
+<div class="brand"><div class="sun">☀️</div><span>Better Days Ahead</span></div>
+<nav class="home-nav" aria-label="Main navigation">
+<a href="#explore">Explore</a><a href="#fun" data-go="fun">Fun Zone</a><a href="#support" data-go="support">Find support</a><a href="#settings" data-go="settings">⚙️ Settings</a>
+</nav><span class="tag">A space for teens</span></header>
+<section class="hero">
+<div><div class="eyebrow">A little space just for you</div><h1>Small steps. Brighter possibilities.</h1>
+<p>Some days are easier than others. Take a breath, explore something fun, or find a way to connect with someone who can help. Start wherever you feel comfortable.</p>
+<a class="btn light" href="#explore" style="display:inline-block;text-decoration:none">Find your next step ↓</a></div>
+<div class="hero-art" aria-hidden="true"><div class="hero-orbit"><span>🌈</span></div><div class="float-note one">You belong here ✨</div><div class="float-note two">One step at a time 🌱</div></div>
+</section>
+<div class="welcome-strip"><span>💛</span><span><strong>No pressure, no perfect mood required.</strong> You can explore, pause, or leave whenever you want.</span></div>
+<section id="explore"><div class="section-head"><div><h2>What would feel helpful right now?</h2><p>Pick whatever feels right. You can change your mind anytime.</p></div></div>
+<div class="grid">
+<button class="tile" data-go="settings"><span class="emoji lav">⚙️</span><span><h3>Make it yours</h3><p>Choose colors, text size, and motion preferences.</p></span></button>
+<button class="tile" data-go="activity-finder"><span class="emoji coral">✨</span><span><h3>Find an activity</h3><p>Choose what kind of activity sounds good right now.</p></span></button>
+<button class="tile" data-go="fun"><span class="emoji pink">🎮</span><span><h3>Fun Zone</h3><p>Small games, creative prompts and easy activities.</p></span></button>
+<button class="tile" data-go="encourage"><span class="emoji blue">💜</span><span><h3>A little encouragement</h3><p>Kind reminders for days that feel hard.</p></span></button>
+<button class="tile" data-go="checkin"><span class="emoji yellow">🌱</span><span><h3>Daily check-in</h3><p>Pause and notice how you're feeling, with no judgment.</p></span></button>
+<button class="tile" data-go="support"><span class="emoji green">🤝</span><span><h3>Find support</h3><p>Ideas for talking to a trusted person or professional.</p></span></button>
+<button class="tile" data-go="learn"><span class="emoji lav">🧠</span><span><h3>Understand feelings</h3><p>Friendly, straightforward mental-health information.</p></span></button>
+<button class="tile" data-go="help"><span class="emoji coral">🆘</span><span><h3>Get help now</h3><p>Find urgent support if you or someone else is unsafe.</p></span></button>
+</div></section>
+
+<section id="settings" class="panel hidden">
+<h2>⚙️ Make this space yours</h2>
+<p>Choose how the website looks and moves. These preferences only affect this open page; they are not saved to a profile or sent anywhere. Refreshing the page resets them.</p>
+<div class="preference-group">
+<h3>🎨 Color theme</h3>
+<div class="preference-choice" id="themeChoices">
+<button type="button" data-theme-choice="lavender" aria-pressed="true">💜 Lavender</button>
+<button type="button" data-theme-choice="ocean" aria-pressed="false">🌊 Ocean</button>
+<button type="button" data-theme-choice="sunset" aria-pressed="false">🌅 Sunset</button>
+<button type="button" data-theme-choice="forest" aria-pressed="false">🌿 Forest</button>
+</div>
+</div>
+<div class="preference-group">
+<h3>🔎 Text size</h3>
+<div class="preference-choice" id="textChoices">
+<button type="button" data-text-choice="normal" aria-pressed="true">Standard</button>
+<button type="button" data-text-choice="large" aria-pressed="false">Large</button>
+<button type="button" data-text-choice="larger" aria-pressed="false">Extra large</button>
+</div>
+</div>
+<div class="preference-group">
+<h3>✨ Animation</h3>
+<div class="preference-choice" id="motionChoices">
+<button type="button" data-motion-choice="normal" aria-pressed="true">Animations on</button>
+<button type="button" data-motion-choice="reduced" aria-pressed="false">Reduce animations</button>
+</div>
+<p class="preference-note">You can also use your device's reduced-motion accessibility setting.</p>
+</div>
+<div class="result" id="settingsStatus" aria-live="polite">Your display preferences are ready to customize.</div>
+<button class="btn soft" id="resetSettings" type="button">Reset display settings</button>
+</section>
+<section id="activity-finder" class="panel hidden">
+<h2>✨ Find an activity for right now</h2>
+<p>Pick the kind of thing that sounds best. This is just an activity chooser—not a mood test. Your choice stays on this page and is not saved or sent anywhere.</p>
+<div class="choice-row" id="vibeChoices" aria-label="Choose an activity style">
+<button class="pill" type="button" data-vibe="calm" aria-pressed="false">🌿 Something calm</button>
+<button class="pill" type="button" data-vibe="energy" aria-pressed="false">⚡ Something active</button>
+<button class="pill" type="button" data-vibe="creative" aria-pressed="false">🎨 Make something</button>
+<button class="pill" type="button" data-vibe="connect" aria-pressed="false">💬 Connect with someone</button>
+<button class="pill" type="button" data-vibe="curious" aria-pressed="false">🌍 Explore something</button>
+</div>
+<div class="result" id="vibeSuggestion" aria-live="polite">Choose one above and we'll suggest a few easy ideas.</div>
+<button class="btn" id="anotherSuggestion" type="button" disabled>Show me different ideas</button>
+<p class="small">You can skip any suggestion. If things feel difficult for a while, talking with a trusted adult or health professional can help too.</p>
+</section>
+<section id="fun" class="panel hidden"><h2>🎮 Fun Zone</h2><p>Choose a kind of activity. There's no score and no need to finish.</p><div class="choice-row" id="funChoices"><button class="pill" aria-pressed="true" data-kind="creative">🎨 Creative</button><button class="pill" aria-pressed="false" data-kind="travel">🌍 Explore</button><button class="pill" aria-pressed="false" data-kind="play">🎲 Play</button></div><div class="result" id="activity" aria-live="polite">Draw a tiny amusement park. Give it a name and invent one unusual ride.</div><button class="btn" id="another">Give me another idea</button>
+<div class="section-head"><div><h3>✨ Tiny games corner</h3><p>Just for fun. No points, pressure, or accounts.</p></div></div>
+<div class="grid">
+  <div class="tile" style="display:block"><div class="emoji yellow">🧩</div><h3>Riddle time</h3><p id="riddleText">What has keys but can't open locks?</p><button class="btn soft" id="riddleAnswer" style="margin-top:12px">Reveal answer</button><p class="small hidden" id="riddleReveal" aria-live="polite">A piano! 🎹</p><button class="pill" id="nextRiddle" style="margin-top:8px">Next riddle</button></div>
+  <div class="tile" style="display:block"><div class="emoji pink">🤔</div><h3>Would you rather?</h3><p id="ratherText">Explore a castle in the clouds or a city under the sea?</p><button class="btn soft" id="nextRather" style="margin-top:12px">Give me a new choice</button></div>
+  <div class="tile" style="display:block"><div class="emoji blue">📚</div><h3>Story starter</h3><p id="storyText">A tiny robot found a mysterious map inside an old library book...</p><button class="btn soft" id="nextStory" style="margin-top:12px">New story starter</button></div>
+</div>
+<div class="section-head"><div><h3>🕹️ Mini-Game Arcade</h3><p>Three little games you can play right here. No leaderboard or pressure.</p></div></div>
+<div class="grid">
+  <div class="tile" style="display:block"><div class="emoji lav">🃏</div><h3>Memory Match</h3><p>Find the matching pairs.</p><div id="memoryBoard" class="memory-board" aria-label="Memory matching game"></div><p id="memoryStatus" class="small" aria-live="polite">Find all four pairs.</p><button class="pill" id="memoryReset">Shuffle cards</button></div>
+  <div class="tile" style="display:block"><div class="emoji yellow">🔤</div><h3>Word Scramble</h3><p id="scrambleClue">Unscramble this word: <strong>RTAES</strong></p><label for="scrambleGuess">Your guess</label><input id="scrambleGuess" type="text" autocomplete="off" style="display:block;width:100%;padding:10px;border:1px solid #ded5f2;border-radius:12px;margin:8px 0" placeholder="Type your answer"><button class="btn soft" id="scrambleCheck">Check answer</button> <button class="pill" id="scrambleNext">New word</button><p id="scrambleStatus" class="small" aria-live="polite">Hint: something you can see in the sky.</p></div>
+  <div class="tile" style="display:block"><div class="emoji green">🗺️</div><h3>Choose-Your-Path</h3><p id="adventureText">You find a tiny door in an old tree. What do you do?</p><div id="adventureChoices" class="choice-row"><button class="pill" data-path="knock">Knock gently</button><button class="pill" data-path="look">Look through the window</button></div><p id="adventureResult" class="small" aria-live="polite">Choose a path to see what happens.</p><button class="pill" id="adventureRestart">Start over</button></div>
+</div>
+<p class="small">These activities are meant to be light and optional. It's always okay to skip them or take a break.</p></section>
+<section id="encourage" class="panel hidden"><h2>💜 A little encouragement</h2><p>Choose a reminder to read. You don't have to feel positive for it to be true.</p><div class="choice-row" id="reminderChoices"><button class="pill" aria-pressed="true" data-rem="hard">Hard day</button><button class="pill" aria-pressed="false" data-rem="lonely">Lonely</button><button class="pill" aria-pressed="false" data-rem="energy">Low energy</button></div><div class="result" id="reminder" aria-live="polite">A difficult day doesn't define your whole life. You deserve kindness and support today.</div></section>
+<section id="checkin" class="panel hidden"><h2>🌱 Daily check-in</h2><p>This is just a private pause on this device. Your selection is not sent or saved.</p><label for="mood">How are things feeling right now?</label><br><select id="mood"><option>Choose an option</option><option>Pretty good</option><option>Okay / mixed</option><option>Down or sad</option><option>Lonely</option><option>Stressed or overwhelmed</option><option>Not sure</option></select> <button class="btn" id="reflect">Continue</button><div class="result hidden" id="reflection" aria-live="polite"></div></section>
+<section id="support" class="panel hidden"><h2>🤝 Finding support</h2><p>You deserve support from real people, not just a website. You could start with a parent or caregiver, another trusted adult, a school counselor, a doctor, or a mental-health professional.</p><h3>Not sure what to say?</h3><div class="result">“I've been having a hard time for a while, and I don't feel like myself. I could use some help. Can we talk?”</div><p class="small">If the first person doesn't listen, try another trusted adult. You deserve to be heard.</p></section>
+<section id="learn" class="panel hidden"><h2>🧠 Understanding depression</h2><p>Depression is more than ordinary sadness. It can affect mood, interest in activities, energy, sleep, concentration and everyday life. It can happen to teenagers, and it is treatable.</p><p>A website can't diagnose or treat depression. If low mood or loss of interest lasts, affects daily life, or worries you, tell a trusted adult and ask for help from a healthcare professional.</p></section>
+<section id="help" class="panel hidden"><h2>🆘 Getting urgent help</h2><div class="crisis"><strong>In the United States: call or text 988</strong>If you are in emotional distress or worried about someone, the 988 Suicide & Crisis Lifeline offers free, confidential support, 24/7. You do not have to be suicidal to contact them. <a href="https://988lifeline.org/" target="_blank" rel="noopener">Visit 988 Lifeline</a>.</div><div class="notice"><strong>If there is immediate danger</strong>Call 911 or go to the nearest emergency department with a trusted adult. If you can, tell a parent, caregiver, school counselor or another trusted adult now.</div></section>
+<div class="notice"><strong>🌼 A gentle reminder</strong>It's okay to have difficult days. You don't have to handle them alone. This site offers activities and information, but it isn't therapy, medical advice, or emergency care.</div>
+<footer class="footer">Better Days Ahead · A teen-friendly support concept<br>Privacy-first demo: no accounts, analytics, chat, or data collection.<br><a href="#help" data-go="help">Need urgent support?</a></footer>
+</main>
+<script>
+const sections=['settings','activity-finder','fun','encourage','checkin','support','learn','help'];
+function show(id){sections.forEach(s=>document.getElementById(s).classList.toggle('hidden',s!==id));const el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();show(b.dataset.go)}));
+const ideas={creative:['Draw a tiny amusement park. Give it a name and invent one unusual ride.','Make up a new ice-cream flavor and design its packaging.','Create a playlist title for a movie that does not exist.','Sketch a dream bedroom using three colors.','Invent a friendly mascot for this website.'],travel:['Pick a city you have never visited and find three landmarks to explore online.','Choose an island and imagine a relaxed day exploring it.','Take a virtual walk through a famous city using a map or street-view service.','Find a national park you would like to visit someday.'],play:['Name five things that are your favorite color.','Make up a silly two-sentence story using: penguin, elevator, pineapple.','Think of three small things that made today a little easier.','Choose an animal and invent its superhero name and power.']};let kind='creative';
+document.querySelectorAll('#funChoices [data-kind]').forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.kind;document.querySelectorAll('#funChoices [data-kind]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));}));
+document.getElementById('another').addEventListener('click',()=>{const arr=ideas[kind];document.getElementById('activity').textContent=arr[Math.floor(Math.random()*arr.length)];});
+
+const riddles=[
+  {q:"What has keys but can't open locks?",a:"A piano! 🎹"},
+  {q:"What gets wetter the more it dries?",a:"A towel! 🧼"},
+  {q:"What has a face and two hands but no arms or legs?",a:"A clock! 🕒"},
+  {q:"What has to be broken before you can use it?",a:"An egg! 🥚"},
+  {q:"What can travel around the world while staying in one corner?",a:"A postage stamp! ✉️"}
+];
+let riddleIndex=0;
+document.getElementById('riddleAnswer').addEventListener('click',()=>{
+  const reveal=document.getElementById('riddleReveal');
+  reveal.classList.remove('hidden');
+  reveal.textContent=riddles[riddleIndex].a;
+});
+document.getElementById('nextRiddle').addEventListener('click',()=>{
+  riddleIndex=(riddleIndex+1)%riddles.length;
+  document.getElementById('riddleText').textContent=riddles[riddleIndex].q;
+  document.getElementById('riddleReveal').classList.add('hidden');
+});
+const ratherOptions=[
+  "Explore a castle in the clouds or a city under the sea?",
+  "Have a tiny friendly dragon or a robot sidekick?",
+  "Visit the moon for a day or explore the deepest part of the ocean in a safe submarine?",
+  "Be able to speak every language or understand every animal?",
+  "Discover a hidden garden or find a secret room in a museum?"
+];
+let ratherIndex=0;
+document.getElementById('nextRather').addEventListener('click',()=>{
+  ratherIndex=(ratherIndex+1)%ratherOptions.length;
+  document.getElementById('ratherText').textContent=ratherOptions[ratherIndex];
+});
+const storyStarts=[
+  "A tiny robot found a mysterious map inside an old library book...",
+  "The new kid at school discovered that their backpack had a secret pocket leading somewhere unexpected...",
+  "Every night, one star in the sky blinked in a different color. Tonight, it sent a message...",
+  "A sleepy dragon accidentally became the guardian of a neighborhood garden...",
+  "At the end of a quiet street stood a door that only appeared on rainy afternoons..."
+];
+let storyIndex=0;
+document.getElementById('nextStory').addEventListener('click',()=>{
+  storyIndex=(storyIndex+1)%storyStarts.length;
+  document.getElementById('storyText').textContent=storyStarts[storyIndex];
+});
+
+// Mini-game arcade: all game state stays in this page and is not saved or sent.
+const memoryEmojis=['🌈','🚀','🐢','🍉'];
+let memoryDeck=[],memoryOpen=[],memoryMatched=[],memoryBusy=false;
+function setupMemory(){memoryDeck=[...memoryEmojis,...memoryEmojis].sort(()=>Math.random()-.5);memoryOpen=[];memoryMatched=[];memoryBusy=false;renderMemory();document.getElementById('memoryStatus').textContent='Find all four pairs.';}
+function renderMemory(){const board=document.getElementById('memoryBoard');board.innerHTML='';memoryDeck.forEach((emoji,i)=>{const b=document.createElement('button');b.className='memory-card';b.type='button';b.textContent=memoryMatched.includes(i)||memoryOpen.includes(i)?emoji:'?';b.setAttribute('aria-label',memoryMatched.includes(i)?'Matched '+emoji:(memoryOpen.includes(i)?'Revealed '+emoji:'Hidden card'));b.disabled=memoryMatched.includes(i)||memoryOpen.includes(i)||memoryBusy;b.addEventListener('click',()=>flipMemory(i));board.appendChild(b);});}
+function flipMemory(i){if(memoryBusy||memoryOpen.includes(i)||memoryMatched.includes(i))return;memoryOpen.push(i);renderMemory();if(memoryOpen.length===2){const [a,b]=memoryOpen;if(memoryDeck[a]===memoryDeck[b]){memoryMatched.push(a,b);memoryOpen=[];document.getElementById('memoryStatus').textContent=memoryMatched.length===memoryDeck.length?'You found every pair! Nice playing. 🎉':`Match found! ${memoryMatched.length/2} of 4 pairs.`;renderMemory();}else{memoryBusy=true;document.getElementById('memoryStatus').textContent='Not a match — try another pair.';window.setTimeout(()=>{memoryOpen=[];memoryBusy=false;renderMemory();},850);}}}
+document.getElementById('memoryReset').addEventListener('click',setupMemory);setupMemory();
+const scrambleWords=[{word:'STARS',scramble:'RTAES',hint:'Something you can see in the night sky.'},{word:'PLANET',scramble:'TNEPLA',hint:'A large object that travels around a star.'},{word:'GARDEN',scramble:'DREGAN',hint:'A place where flowers and plants grow.'},{word:'PUZZLE',scramble:'ZPZULE',hint:'A game or problem you figure out.'},{word:'ROCKET',scramble:'KOTCER',hint:'A vehicle that can travel into space.'}];let scrambleIndex=0;
+function showScramble(){const w=scrambleWords[scrambleIndex];document.getElementById('scrambleClue').innerHTML='Unscramble this word: <strong>'+w.scramble+'</strong>';document.getElementById('scrambleGuess').value='';document.getElementById('scrambleStatus').textContent='Hint: '+w.hint;}
+document.getElementById('scrambleCheck').addEventListener('click',()=>{const guess=document.getElementById('scrambleGuess').value.trim().toUpperCase();const status=document.getElementById('scrambleStatus');if(!guess){status.textContent='Type a guess first — or use the hint.';return;}status.textContent=guess===scrambleWords[scrambleIndex].word?'That’s it! Great solving. ⭐':'Not quite. Try again, or choose a new word.';});
+document.getElementById('scrambleNext').addEventListener('click',()=>{scrambleIndex=(scrambleIndex+1)%scrambleWords.length;showScramble();});showScramble();
+const adventureStart={text:'You find a tiny door in an old tree. What do you do?',choices:[['knock','Knock gently'],['look','Look through the window']]};
+const adventureScenes={knock:{text:'A friendly mouse wearing a blue hat opens the door and invites you into a cozy library. What next?',choices:[['book','Choose a glowing book'],['tea','Accept a tiny cup of tea']]},look:{text:'Inside, you spot a miniature garden with glowing flowers. What next?',choices:[['water','Help water the flowers'],['path','Follow a winding pebble path']]},book:{text:'The book contains a map to a hidden sky garden. You found a new adventure! 🌟',choices:[]},tea:{text:'The tea tastes like strawberries, and the mouse tells you a very silly joke. A lovely little visit! 🍓',choices:[]},water:{text:'The flowers sparkle and a little friendly bee gives you a tour. 🌼',choices:[]},path:{text:'The path leads to a pond where paper boats sail by themselves. What a discovery! ⛵',choices:[]}};
+function renderAdventure(scene){const data=adventureScenes[scene]||adventureStart;document.getElementById('adventureText').textContent=data.text;const choices=document.getElementById('adventureChoices');choices.innerHTML='';data.choices.forEach(([key,label])=>{const b=document.createElement('button');b.className='pill';b.textContent=label;b.addEventListener('click',()=>renderAdventure(key));choices.appendChild(b);});document.getElementById('adventureResult').textContent=data.choices.length?'Choose what happens next.':'The end — you can start a new story anytime.';}
+document.getElementById('adventureRestart').addEventListener('click',()=>renderAdventure('start'));renderAdventure('start');
+
+
+const activitySuggestions={
+calm:[
+"Put on a favorite song and notice three sounds you can hear.",
+"Get comfortable and read a few pages of a book or comic.",
+"Look out a window and spot five things you hadn't noticed.",
+"Try a gentle stretch, or simply take a quiet screen break."
+],
+energy:[
+"Put on one upbeat song and move around in whatever way feels fun.",
+"Do a quick room scavenger hunt: find something soft, round, blue, and funny.",
+"Make up a silly 60-second dance or invent a new sport with a soft ball.",
+"Step outside with a trusted adult if you feel like getting some fresh air."
+],
+creative:[
+"Design a new planet and give it three unusual rules.",
+"Draw a creature made from your three favorite animals.",
+"Invent a snack shop and create its most ridiculous menu item.",
+"Write the first two sentences of a mystery story."
+],
+connect:[
+"Send someone you trust a simple hello or a funny picture.",
+"Ask a family member or friend what their favorite childhood game was.",
+"Invite someone to play a quick game, take a walk, or share a snack.",
+"If you need support, try telling a trusted adult: 'I've had a tough time and could use someone to talk to.'"
+],
+curious:[
+"Choose a city on a map and find one landmark you didn't know about.",
+"Look up an animal with a surprising ability and learn one new fact.",
+"Find out how something ordinary works, like a zipper or a microwave.",
+"Pick a planet and discover one interesting fact about it."
+]
+};
+let selectedVibe='';
+let suggestionRound=0;
+function updateVibeSuggestions(){
+ const choices=activitySuggestions[selectedVibe]||[];
+ const first=(suggestionRound*2)%choices.length;
+ const shown=[choices[first],choices[(first+1)%choices.length]];
+ document.getElementById('vibeSuggestion').innerHTML='<strong>Here are a couple of ideas:</strong><ul>'+shown.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+ document.getElementById('anotherSuggestion').disabled=false;
+}
+document.querySelectorAll('#vibeChoices [data-vibe]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  selectedVibe=button.dataset.vibe;
+  suggestionRound=0;
+  document.querySelectorAll('#vibeChoices [data-vibe]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+  updateVibeSuggestions();
+ });
+});
+document.getElementById('anotherSuggestion').addEventListener('click',()=>{
+ if(!selectedVibe)return;
+ suggestionRound=(suggestionRound+1)%activitySuggestions[selectedVibe].length;
+ updateVibeSuggestions();
+});
+
+const reminders={hard:'A difficult day does not define your whole life. You deserve kindness and support today.',lonely:'Feeling lonely does not mean you are unimportant. You deserve connection and people who listen.',energy:'You do not have to accomplish everything today. A small step—or a rest—is okay. Asking for help is okay, too.'};
+document.querySelectorAll('#reminderChoices [data-rem]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#reminderChoices [data-rem]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.getElementById('reminder').textContent=reminders[b.dataset.rem];}));
+document.getElementById('reflect').addEventListener('click',()=>{const v=document.getElementById('mood').value;const box=document.getElementById('reflection');box.classList.remove('hidden');box.textContent=v==='Choose an option'?'Choose an option first.': 'Thanks for checking in. You do not have to change how you feel right now. If things have been difficult or are affecting your life, consider telling a trusted adult or healthcare professional.';});
+
+
+const settingsStatus=document.getElementById('settingsStatus');
+function setPressed(selector,attribute,value){
+ document.querySelectorAll(selector).forEach(button=>button.setAttribute('aria-pressed',String(button.getAttribute(attribute)===value)));
+}
+document.querySelectorAll('#themeChoices [data-theme-choice]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const theme=button.dataset.themeChoice;
+  document.body.dataset.theme=theme;
+  setPressed('#themeChoices [data-theme-choice]','data-theme-choice',theme);
+  settingsStatus.textContent='Color theme changed. Your choice stays only while this page is open.';
+ });
+});
+document.querySelectorAll('#textChoices [data-text-choice]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const size=button.dataset.textChoice;
+  if(size==='normal')delete document.body.dataset.textSize;
+  else document.body.dataset.textSize=size;
+  setPressed('#textChoices [data-text-choice]','data-text-choice',size);
+  settingsStatus.textContent='Text size updated.';
+ });
+});
+document.querySelectorAll('#motionChoices [data-motion-choice]').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const motion=button.dataset.motionChoice;
+  document.body.classList.toggle('reduce-motion',motion==='reduced');
+  setPressed('#motionChoices [data-motion-choice]','data-motion-choice',motion);
+  settingsStatus.textContent=motion==='reduced'?'Animations reduced.':'Animations enabled.';
+ });
+});
+document.getElementById('resetSettings').addEventListener('click',()=>{
+ delete document.body.dataset.theme;
+ delete document.body.dataset.textSize;
+ document.body.classList.remove('reduce-motion');
+ setPressed('#themeChoices [data-theme-choice]','data-theme-choice','lavender');
+ setPressed('#textChoices [data-text-choice]','data-text-choice','normal');
+ setPressed('#motionChoices [data-motion-choice]','data-motion-choice','normal');
+ settingsStatus.textContent='Display settings reset to their defaults.';
+});
+
+const welcomeScreen=document.getElementById('welcomeScreen');
+const welcomeStart=document.getElementById('welcomeStart');
+welcomeStart.addEventListener('click',()=>{
+  welcomeScreen.hidden=true;
+  document.querySelector('.hero h1')?.setAttribute('tabindex','-1');
+  document.querySelector('.hero h1')?.focus({preventScroll:true});
+});
+
+</script></body></html>
